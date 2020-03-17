@@ -1,135 +1,152 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-   <meta charset="utf-8" />
-  <title>Mr.L的网志</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://qq845620380.github.io/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-         <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://qq845620380.github.io/images/avatar.png?v=1584450109544" style="width:127px;" />
+<html>
+  <head>
+    
+<meta charset="utf-8" >
 
-     <h3 title=""><a href="/">Mr.L</a></h3>
+<title>Mr.L的博客</title>
+<meta name="description" content="思考获得生活与成长的全局认识">
 
-     <div class="description">
-      <p>思考获得生活与成长的全局认识</p>
-     </div>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://qq845620380.github.io/favicon.ico?v=1584451695234">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://qq845620380.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://qq845620380.github.io">
+        <img class="avatar" src="https://qq845620380.github.io/images/avatar.png?v=1584451695234" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://qq845620380.github.io">
+        <h1 class="site-title">Mr.L的博客</h1>
+      </a>
     </div>
-   </div>
-   <ul class="social-links">
-
-
-    
-
-    
-
-    
-
-    <li><a href="https://github.com/qq845620380"><i class="fa fa-github"></i></a></li>
- 
-    
-
-    
-
-    
-
-    
-
-    
-
-    <li><a href="QQ：845620380"><i class="fa fa-qq"></i></a></li>
- 
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
-    
-
-    </div>
-   </div>
   </div>
-  <div class="main">
-          <div class="page-top animated fadeInDown">
-    <div class="nav">
+</div>
 
-     <li><a  href="https://qq845620380.github.io">Mr.L的网志</a></li>
-
-     <li><a  href="https://qq845620380.github.io/archives">随笔</a></li>
-
-     <li><a  href="https://qq845620380.github.io">分类</a></li>
-
-     <li><a  href="https://qq845620380.github.io">地图</a></li>
-
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-     <div class="archive animated fadeInDown">
-      <ul class="list-with-title">
-       <div class="archive">
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
+        
+          <a href="https://qq845620380.github.io" class="menu purple-link">
+            Mr.L的网志
+          </a>
+        
       
-        <div class="listing-title">
-                2020
+        
+          <a href="https://qq845620380.github.io/archives" class="menu purple-link">
+            随笔
+          </a>
+        
+      
+        
+          <a href="https://qq845620380.github.io" class="menu purple-link">
+            分类
+          </a>
+        
+      
+        
+          <a href="https://qq845620380.github.io" class="menu purple-link">
+            地图
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+        <div class="content-container">
+          
+          
+
+<div class="archives-container">
+  
+    <h2 class="year">2020</h2>
+    
+      
+        <article class="post">
+          <a href="https://qq845620380.github.io/post/fen-lei/">
+            <h2 class="post-title">
+              分类
+              <small>2020-03-17</small>
+            </h2>
+          </a>
+        </article>
+      
+    
+      
+        <article class="post">
+          <a href="https://qq845620380.github.io/post/111/">
+            <h2 class="post-title">
+              必要难度
+              <small>2020-03-16</small>
+            </h2>
+          </a>
+        </article>
+      
+    
+  
+</div>
+
+
         </div>
 
-        <ul class="listing">
-
-                
-                             
-         <div class="listing-item">
-          <div class="listing-post">
-           <a href="https://qq845620380.github.io/post/fen-lei/" title="分类">分类</a>
-           <div class="post-time">
-            <span class="date">2020-03-17 </span>
-           </div>
-          </div>
-         </div>
-         
-         
-                             
-         <div class="listing-item">
-          <div class="listing-post">
-           <a href="https://qq845620380.github.io/post/111/" title="必要难度">必要难度</a>
-           <div class="post-time">
-            <span class="date">2020-03-16 </span>
-           </div>
-          </div>
-         </div>
-         
-         
-        </ul>
-        	
-       </div>
-       <div class="pagination">
-        <ul class="clearfix"></ul>
-       </div>
-      </ul>
-     </div>
-    </div>
-   </div>
+        <div class="site-footer">
+  <div class="slogan">思考获得生活与成长的全局认识</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-   <script src="https://qq845620380.github.io/media/scripts/jquery.js"></script>
-  <script src="https://qq845620380.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://qq845620380.github.io/media/scripts/jquery.appear.js"></script>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qq845620380.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
 
- </body>
+      </div>
+      <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+    </div>
+  </body>
 </html>

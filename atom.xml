@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qq845620380.github.io</id>
     <title>Mr.L的网志</title>
-    <updated>2020-03-17T06:40:54.499Z</updated>
+    <updated>2020-03-17T07:00:37.334Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qq845620380.github.io"/>
     <link rel="self" href="https://qq845620380.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://qq845620380.github.io/images/avatar.png</logo>
     <icon>https://qq845620380.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Mr.L的网志</rights>
+    <entry>
+        <title type="html"><![CDATA[分类]]></title>
+        <id>https://qq845620380.github.io/post/fen-lei/</id>
+        <link href="https://qq845620380.github.io/post/fen-lei/">
+        </link>
+        <updated>2020-03-17T06:43:13.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[必要难度]]></title>
         <id>https://qq845620380.github.io/post/111/</id>

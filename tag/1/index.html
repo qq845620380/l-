@@ -8,9 +8,9 @@
 <meta name="description" content="思考获得生活与成长的全局认识">
 <meta name="theme-color" content="#000">
 <title>Mr.L的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1584453123999">
+<link rel="shortcut icon" href="/favicon.ico?v=1584453966257">
 <link rel="stylesheet" href="/styles/main.css">
-<link rel="stylesheet" href="/media/css/mist.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
 
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -32,9 +32,9 @@
     <div class="head-top-line"></div>
     <div class="header-box">
       
-<div class=" mist">
+<div class=" gemini">
   <header class="header bg-color ">
-    <div class="blog-header box-shadow-wrapper  " id="header">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
       <div class="nav-toggle" id="nav_toggle">
         <div class="toggle-box">
           <div class="line line-top"></div>
@@ -45,17 +45,13 @@
       <div class="site-meta">       
         <div class="site-title">
           
-            <a href="/" class="">
-              <span class="logo-line-before">
-                <i class=""></i>
-              </span>
-              <span class="main-title">Mr.L的博客</span>
-              <span class="logo-line-after">
-                <i class=""></i>
-              </span>
+            <a href="/" class="brand">
+              <span>Mr.L的博客</span>
             </a>  
           
         </div>
+        
+          <p class="subtitle">你只需要每天比昨天聪明一点点</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
@@ -65,7 +61,7 @@
               
               
                 <a href="https://qq845620380.github.io" target="_self">
-                  <i class="fa fa-globe"></i> Mr.L的网志
+                  Mr.L的网志
                 </a>
               
             </li>
@@ -74,7 +70,7 @@
               
               
                 <a href="https://qq845620380.github.io/archives" target="_self">
-                  <i class="fa fa-globe"></i> 随笔
+                  随笔
                 </a>
               
             </li>
@@ -83,7 +79,7 @@
               
               
                 <a href="https://qq845620380.github.io" target="_self">
-                  <i class="fa fa-globe"></i> 分类
+                  分类
                 </a>
               
             </li>
@@ -92,7 +88,7 @@
               
               
                 <a href="https://qq845620380.github.io" target="_self">
-                  <i class="fa fa-globe"></i> 地图
+                  地图
                 </a>
               
             </li>
@@ -132,11 +128,11 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout bg-color mist">
+      <div class="section-layout  gemini">
         <div class="section-layout-wrapper">
           <div id="sidebarMeta" class="sidebar">
     
-<div class="sidebar-wrapper box-shadow-wrapper ">
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://qq845620380.github.io/images/avatar.png"/>
     <p class="site-author-name">Mr.L的博客</p>
@@ -164,6 +160,15 @@
     </div>
   </div>
   
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://qq845620380.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
   
 
 
@@ -171,7 +176,7 @@
 </div>
 <script>
   let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'mist';
+  let scheme = 'gemini';
   let sidebarWrapper = document.querySelector('.sidebar-wrapper');
   if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
     document.addEventListener('scroll', function(e) {
@@ -234,14 +239,12 @@
   </footer>
   
   
-    <div class="drawer-box left" id="drawer_box">
-      <span class="muse-line muse-line-first"></span>
-      <span class="muse-line muse-line-middle"></span>
-      <span class="muse-line muse-line-last"></span>
-    </div>
-  
-  <div class="mist back-to-top" id="back_to_top">
+  <div class="gemini back-to-top" id="back_to_top">
     <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
     
   </div>
   

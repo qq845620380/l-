@@ -1,107 +1,62 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-    <meta charset="utf-8" />
-  <title>Lester Li的网志</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://qq845620380.github.io/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://qq845620380.github.io/images/avatar.png?v=1585728407603" style="width:127px;" />
-
-     <h3 title=""><a href="/">Lester Li</a></h3>
-
-     <div class="description">
-      <p>思考获得生活与成长的全局认识</p>
-     </div>
+<html>
+<head>
+<!-- 必要参数 -->
+<meta charset="utf-8"/>
+<title>Lester Li的网志</title>
+<meta name="keywords" content="关键词"/>
+<meta name="description" content="简述"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- CSS -->
+<link rel="stylesheet" href="https://qq845620380.github.io/media/css/mdui.min.css">
+<link rel="stylesheet" href="https://qq845620380.github.io/media/css/modify.css">
+</head>
+<body>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue-grey mdui-theme-accent-blue mdui-theme-layout-dark">
+<header role="banner">
+    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0">
+        <div class="mdui-toolbar">
+            <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">menu</i></button>
+            <a href="https://qq845620380.github.io" class="mdui-typo-headline">Lester Li的网志</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '深色样式切换', position: 'left'}" id="DarkStyle"><i class="mdui-icon material-icons">brightness_4</i></button>
+        </div>
     </div>
-   </div>
-   <ul class="social-links">
+</header>
+
+<nav id="drawer" class="mdui-drawer mdui-drawer-full-height mdui-drawer-close">
+    <ul class="mdui-list">
+        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">Mr.L的网志</li></a>
+        <a href="https://qq845620380.github.io/archives" class="menu"><li class="mdui-list-item mdui-ripple">随笔</li></a>
+        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">分类</li></a>
+        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">地图</li></a>
+        
+        <a href="https://github.com/CPlayer-CN/gridea-theme-cplayer-material" class="spread"><li class="mdui-list-item mdui-ripple">主题主页</li></a>
+    </ul>
+</nav>
 
 
-    
-
-    
-
-    
-
-    <li><a href="https://github.com/qq845620380"><i class="fa fa-github"></i></a></li>
- 
-    
-
-    
-
-    
-
-    
-
-    
-
-    <li><a href="QQ：845620380"><i class="fa fa-qq"></i></a></li>
- 
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-    
-
-    </div>
-   </div>
-  </div>
-  <div class="main">
-      <div class="page-top animated fadeInDown">
-    <div class="nav">
-
-     <li><a  href="https://qq845620380.github.io">Mr.L的网志</a></li>
-
-     <li><a  href="https://qq845620380.github.io/archives">随笔</a></li>
-
-     <li><a  href="https://qq845620380.github.io">分类</a></li>
-
-     <li><a  href="https://qq845620380.github.io">地图</a></li>
-
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-         
-     <div class="post animated fadeInDown">
-  <div class="tags-container">
+<main class="mdui-container mdui-m-t-2">
+    <div class="mdui-card">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">标签列表</div>
+        </div>
+        <div class="mdui-card-actions">
             
-              <a class="jinggetag" href="https://qq845620380.github.io/tag/1/">1</a>
+                <a href="https://qq845620380.github.io/tag/1/" class="mdui-chip"><span class="mdui-chip-title">1</span></a>
             
-
-            
-          </div>
-
-      </div>
-     </div>
-    
-  
+        </div>
     </div>
-   </div>
-  </div>
-  <script src="https://qq845620380.github.io/media/scripts/jquery.js"></script>
-  <script src="https://qq845620380.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://qq845620380.github.io/media/scripts/jquery.appear.js"></script>
+</main>
 
+<div class="mdui-m-t-2 mdui-text-center mdui-typo">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
 
- </body>
+<script src="https://qq845620380.github.io/media/js/jquery.min.js"></script>
+<script src="https://qq845620380.github.io/media/js/mdui.min.js"></script>
+<script src="https://qq845620380.github.io/media/js/modify.js"></script>
+
+</body>
 </html>

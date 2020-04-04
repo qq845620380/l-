@@ -1,80 +1,150 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<!-- 必要参数 -->
-<meta charset="utf-8"/>
-<title>Lester Li的网志</title>
-<meta name="keywords" content="关键词"/>
-<meta name="description" content="简述"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<link rel="shortcut icon" href="favicon.ico">
-<!-- CSS -->
-<link rel="stylesheet" href="https://qq845620380.github.io/media/css/mdui.min.css">
-<link rel="stylesheet" href="https://qq845620380.github.io/media/css/modify.css">
-</head>
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue-grey mdui-theme-accent-blue mdui-theme-layout-dark">
-<header role="banner">
-    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0">
-        <div class="mdui-toolbar">
-            <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">menu</i></button>
-            <a href="https://qq845620380.github.io" class="mdui-typo-headline">Lester Li的网志</a>
-            <div class="mdui-toolbar-spacer"></div>
-            <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '深色样式切换', position: 'left'}" id="DarkStyle"><i class="mdui-icon material-icons">brightness_4</i></button>
-        </div>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>文章归档 | Lester Li的网志</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://qq845620380.github.io/favicon.ico?v=1585966071552">
+<link rel="stylesheet" href="https://qq845620380.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="思考获得生活与成长的全局认识">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qq845620380.github.io">
+        <img src="https://qq845620380.github.io/images/avatar.png?v=1585966071552" class="site-logo">
+        <h1 class="site-title">Lester Li的网志</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-</header>
-
-<nav id="drawer" class="mdui-drawer mdui-drawer-full-height mdui-drawer-close">
-    <ul class="mdui-list">
-        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">Mr.L的网志</li></a>
-        <a href="https://qq845620380.github.io/archives" class="menu"><li class="mdui-list-item mdui-ripple">随笔</li></a>
-        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">分类</li></a>
-        <a href="https://qq845620380.github.io" class="menu"><li class="mdui-list-item mdui-ripple">地图</li></a>
+    <div>
+      
         
-        <a href="https://github.com/CPlayer-CN/gridea-theme-cplayer-material" class="spread"><li class="mdui-list-item mdui-ripple">主题主页</li></a>
-    </ul>
-</nav>
-
-
-<main class="mdui-container mdui-m-t-2">
-    
-
-<section class="mdui-card">
-    <div class="mdui-card-primary">
-        <div class="mdui-card-primary-title">归档</div>
+          <a href="https://qq845620380.github.io" class="site-nav">
+            Lester Li
+          </a>
+        
+      
+        
+          <a href="https://qq845620380.github.io/archives" class="site-nav">
+            随笔
+          </a>
+        
+      
+        
+          <a href="https://qq845620380.github.io" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="https://qq845620380.github.io" class="site-nav">
+            地图
+          </a>
+        
+      
     </div>
-    <div class="mdui-card-content">
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
         
-            <h2 class="mdui-typo-display-1">2020</h2>
-            <article class="mdui-list">
-                
-                        
-                            <a href="https://qq845620380.github.io/post/fen-lei/" class="mdui-list-item mdui-list-item-title mdui-ripple"><div class="mdui-list-item-content"><div class="mdui-list-item-title">分类</div><div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">2020-03-17</div></div></a>
-                        
-                
-                        
-                            <a href="https://qq845620380.github.io/post/111/" class="mdui-list-item mdui-list-item-title mdui-ripple"><div class="mdui-list-item-content"><div class="mdui-list-item-title">必要难度</div><div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">2020-03-16</div></div></a>
-                        
-                
-            </article>
+      
         
+      
+        
+      
+        
+      
+        
+      
     </div>
-</section>
-</main>
-
-<nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
-    
-    
-</nav>
-
-<div class="mdui-m-t-2 mdui-text-center mdui-typo">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    <div class="site-description">
+      思考获得生活与成长的全局认识
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qq845620380.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
 </div>
 
-<script src="https://qq845620380.github.io/media/js/jquery.min.js"></script>
-<script src="https://qq845620380.github.io/media/js/mdui.min.js"></script>
-<script src="https://qq845620380.github.io/media/js/modify.js"></script>
 
-</body>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+
+          <h2 class="archives-title">文章归档</h2>
+          <div class="archives-container">
+            
+              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2020</h2>
+              
+                
+                  <article class="post">
+                    <a href="https://qq845620380.github.io/post/fen-lei/">
+                      <h2 class="post-title">
+                        分类
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://qq845620380.github.io/post/111/">
+                      <h2 class="post-title">
+                        必要难度
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+            
+          </div>
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
 </html>

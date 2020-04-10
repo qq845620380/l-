@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qq845620380.github.io</id>
     <title>Lester Li的网志</title>
-    <updated>2020-04-05T17:10:51.768Z</updated>
+    <updated>2020-04-10T02:16:32.802Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qq845620380.github.io"/>
     <link rel="self" href="https://qq845620380.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://qq845620380.github.io/images/avatar.png</logo>
     <icon>https://qq845620380.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Lester Li的网志</rights>
+    <entry>
+        <title type="html"><![CDATA[一点笔记系统思考]]></title>
+        <id>https://qq845620380.github.io/YKrBhLtSR/</id>
+        <link href="https://qq845620380.github.io/YKrBhLtSR/">
+        </link>
+        <updated>2020-04-10T02:15:34.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[主页]]></title>
         <id>https://qq845620380.github.io/QFcZLBqZu/</id>

@@ -7,8 +7,8 @@
 <meta name="keywords" content="思考 成长 发展">
 <meta name="description" content="记录Li的个人思想成长">
 <meta name="theme-color" content="#000">
-<title>一点营销思考 | Lester-Li的网志</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587173514534">
+<title>三年大学生活与创业比赛总结 | Lester-Li的网志</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1587177174733">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/mist.css">
 
@@ -27,8 +27,8 @@
 
 
 
-    <meta name="description" content="一点营销思考" />
-    <meta name="keywords" content="营销" />
+    <meta name="description" content="三年大学生活与创业比赛总结" />
+    <meta name="keywords" content="随笔" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -80,7 +80,7 @@
               
               
                 <a href="https://qq845620380.github.io/tags" target="_self">
-                  合集
+                  文章
                 </a>
               
             </li>
@@ -90,7 +90,7 @@
             <li class="nav-item ">
               
               
-                <a href="https://qq845620380.github.io/archives" target="_self">
+                <a href="https://qq845620380.github.io/post/X2p0B3xa8" target="_self">
                   联系
                 </a>
               
@@ -145,8 +145,7 @@
       <div class="sidebar-body mist" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper ">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -163,13 +162,13 @@
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">1</span>
         <span class="site-item-stat-name">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">1</span>
         <span class="site-item-stat-name">标签</span>
       </a>
     </div>
@@ -194,187 +193,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper  compress" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E6%88%98%E7%95%A5"><em><strong>战略</strong></em></a></li>
-<li><a href="#%E8%90%A5%E9%94%80"><em><strong>营销</strong></em></a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-      lList.push(elem);
-    }
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-
-(function() {
-  // 处理不是从#一级标题开始目录
-  if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-    let con = tocContent.children[0].children[0];
-    tocContent.innerHTML = con.innerHTML;
-  }
-  addTocNumber(tocContent, '');
-})();
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -463,7 +281,7 @@ window.addEventListener('load', function() {
               <header class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://qq845620380.github.io/post/fen-lei/">
-      一点营销思考
+      三年大学生活与创业比赛总结
     </a>
   </h1>
   <div class="post-meta">
@@ -471,7 +289,7 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-03-17</span>
+      <span>2020-04-18</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -480,8 +298,8 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://qq845620380.github.io/tag/TS0OtbTtb/">
-              <span>营销</span>
+            <a href="https://qq845620380.github.io/tag/UjBYuSJnz/">
+              <span>随笔</span>
             </a>
           
         
@@ -490,28 +308,38 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>5分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>29<span class="pc-show">字数</span></span>
+      <span>1485<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h1 id="战略"><em><strong>战略</strong></em></h1>
-<p><a href="https://qq845620380.github.io/post/111/" title="必要难度">必要难度</a><br>
-战略2<br>
-战略3<br>
-战略4</p>
-<h1 id="营销"><em><strong>营销</strong></em></h1>
-<p>营销1<br>
-营销2<br>
-营销3<br>
-营销4</p>
-<!-- 今年 -->
+                <p>#三年大学生活与创业比赛总结<br>
+疫情当道，也不知是否会延迟了我的毕业时间，但不会延迟的是，我的三年大学时光的结束。几天之后少年将要奔赴亲新的战场，大多数人或许喜欢称之为「社会大学」。我目前还不知道，在这样一所大学之中，我应该如何，但好在这延长的假期之中，总是有了一点方向。</p>
+<p>#大学<br>
+近忽而想到，既然开了博客记录成长，目前又刚好遇上毕业，但从头来记录与总结大学生活，或许有些不易与不大的效果；故选在三年中做得比较好的关于创业比赛的事情做一小小的总结，以此结束大学生活。刚好之前在互联网+比赛群内校方要求我们写过类似的东西，虽写时未费多少心力，但引用来寥寥的进行一下总结，倒也是够了，所以我并不想过多修饰。这样想想，直接就于下面附上</p>
+<p>#比赛</p>
+<blockquote>
+<p>在这个大众创业，万众创新的时代下，充满着许多新的机遇与挑战，这些机遇与挑战虽然充满了不确定性，可是却吸引着一批又一批的项目和项目团队前仆后继的向前，因为他们所为的不仅仅是荣誉，而是希望能在这样的时代背景下，为社会贡献并创造出属于他们的价值，散发年轻的光和热，而在工贸，也有这么一群人，从而他们组成了充满年轻朝气且极其具有创业意识的“V”你解忧项目团队<br>
+“V”你解忧项目从初期孵化，到比赛夺奖，中间经历过的大大小小的比赛不计其数，但是可以计数的是，每次比赛，我们的项目都获得了前三的名次，而这不是巧合，正是因为我们知道，我们的项目应该走得更远，所以不论比赛是大是小，我们都应当把它当做省赛来进行准备，只有这样，我们的项目才能更加完备，更加无可挑剔，在过程中，我们的团队成员才能汲取更多的经验，而这样的一种意识，将会伴随我们的终身，当然，过程也是十分痛苦的，因为这不是一般的学生所能够完成的，在充满不确定性且完全未知的项目探索下，我们需要不断地对项目，甚至对自我进行否定，只有通过不断地改变我们原有的假设，我们的团队才能够进步，我们的项目才能够进步<br>
+比赛虽多，总会有落幕的那一刻，但是为了能够有一个体面的落幕，给关心过我们的身边朋友、老师、家人一个满意的交代，项目团队中的学生和老师们一起付出了太多太多，所以我们在比赛结束之后，不能不问自己一句，在这经历这众多比赛之后，我们到底得到了什么？<br>
+(1)创新创业意识<br>
+所谓创新创业意识，就像是一种大脑内部的神经反射，它使我们以后再遇到生活中的一些小事或我们自己从事的工作，将会产生与普通人不同的洞见，比如我们会去想：这件事有什么地方是我可以创新的？这个项目有没有落地的可能性？怎么样才能让这个项目运转起来？这个公司的商业模式是什么？，通过提出关于创新创业方面的问题，从而引发我们对事物不一样的思考，而这正是迈向创新创业的第一步。<br>
+(2)创新创业思维<br>
+光有创新创业的意识，可以提高我们的商业嗅觉，让我们开始去尝试思考不一样的问题，但是不足以让我们去进行一个系统的思考，所以我们还需要创新创业思维，而创新创业思维就是关于一个项目，它所由市场机遇、人员结构、营销、财务和核心竞争力等要素构成的商业框架系统，通过这一个逻辑系统，我们能够对一个项目有一个完整的分析。<br>
+(3)创新创业方法<br>
+思维仅供用来思考和解决问题，而真正面对创新创业，我们需要具体的执行方法，比如在面对竞争者，我们需要竞争五力模型进行分析，通过对环境的分析确立核心竞争力，面对营销，我们需要4p理论，面对构建商业模式，需要商业模式画布，当我们把这些方法用于思考过后，就能够转化为具体的行动目标和方案，让我们在创业过程中所做的事情是符合逻辑的，而不是想一步做一步，这是创业的大忌。<br>
+(4)文案策划能力<br>
+在撰写策划案的过程中，我们能够收获对一个项目的大局观以及书面表达的能力。<br>
+(5)随机应变能力<br>
+参加一个创新创业比赛，不仅仅需要写策划，还需要进行考验随机应变能力的路演，这让我们在过程中大脑能够快速运转，比如仅仅从几秒钟的时间内，我们就需要在大脑中分析并判断评委所问问题的含义以及目的，从而有重点，有逻辑的进行回答，这放在以后做任何事中，都是极为重要的能力之一。</p>
+</blockquote>
+
               </div>
               <div class="post-footer">
   <ul class="post-copyright">
@@ -521,7 +349,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qq845620380.github.io/post/fen-lei/" title="一点营销思考">一点营销思考</a>
+      <a href="https://qq845620380.github.io/post/fen-lei/" title="三年大学生活与创业比赛总结">三年大学生活与创业比赛总结</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -530,21 +358,17 @@ window.addEventListener('load', function() {
   </ul>
   <div class="tags">
     
-      <a href="https://qq845620380.github.io/tag/TS0OtbTtb/"># 营销</a>
+      <a href="https://qq845620380.github.io/tag/UjBYuSJnz/"># 随笔</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="主页" href="https://qq845620380.github.io/post/QFcZLBqZu/">主页</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="主页" href="https://qq845620380.github.io/post/QFcZLBqZu/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="必要难度理论" href="https://qq845620380.github.io/post/X2p0B3xa8/">必要难度理论</a>
-        <a class="nav-mobile-next" title="必要难度理论" href="https://qq845620380.github.io/post/X2p0B3xa8/">下一篇</a>
+        <a class="nav-pc-next" title="一点笔记系统思考" href="https://qq845620380.github.io/post/YKrBhLtSR/">一点笔记系统思考</a>
+        <a class="nav-mobile-next" title="一点笔记系统思考" href="https://qq845620380.github.io/post/YKrBhLtSR/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

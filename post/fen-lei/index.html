@@ -8,7 +8,7 @@
 <meta name="description" content="记录Li的个人思想成长">
 <meta name="theme-color" content="#000">
 <title>三年大学生活与创业比赛总结 | Lester-Li的网志</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587177411638">
+<link rel="shortcut icon" href="/favicon.ico?v=1587177554741">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/mist.css">
 
@@ -145,7 +145,8 @@
       <div class="sidebar-body mist" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper ">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -193,6 +194,188 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper  compress" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%89%E5%B9%B4%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E4%B8%8E%E5%88%9B%E4%B8%9A%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93">三年大学生活与创业比赛总结</a></li>
+<li><a href="#%E5%A4%A7%E5%AD%A6">大学</a></li>
+<li><a href="#%E6%AF%94%E8%B5%9B">比赛</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+      lList.push(elem);
+    }
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+
+(function() {
+  // 处理不是从#一级标题开始目录
+  if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+    let con = tocContent.children[0].children[0];
+    tocContent.innerHTML = con.innerHTML;
+  }
+  addTocNumber(tocContent, '');
+})();
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
           
         
       </div>
@@ -319,11 +502,11 @@
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <p>#三年大学生活与创业比赛总结<br>
-疫情当道，也不知是否会延迟了我的毕业时间，但不会延迟的是，我的三年大学时光的结束。几天之后少年将要奔赴亲新的战场，大多数人或许喜欢称之为「社会大学」。我目前还不知道，在这样一所大学之中，我应该如何，但好在这延长的假期之中，总是有了一点方向。</p>
-<p>#大学<br>
-近忽而想到，既然开了博客记录成长，目前又刚好遇上毕业，但从头来记录与总结大学生活，或许有些不易与不大的效果；故选在三年中做得比较好的关于创业比赛的事情做一小小的总结，以此结束大学生活。刚好之前在互联网+比赛群内校方要求我们写过类似的东西，虽写时未费多少心力，但引用来寥寥的进行一下总结，倒也是够了，所以我并不想过多修饰。这样想想，直接就于下面附上</p>
-<p>#比赛</p>
+                <h1 id="三年大学生活与创业比赛总结">三年大学生活与创业比赛总结</h1>
+<p>疫情当道，也不知是否会延迟了我的毕业时间，但不会延迟的是，我的三年大学时光的结束。几天之后少年将要奔赴亲新的战场，大多数人或许喜欢称之为「社会大学」。我目前还不知道，在这样一所大学之中，我应该如何，但好在这延长的假期之中，总是有了一点方向。</p>
+<h1 id="大学">大学</h1>
+<p>近忽而想到，既然开了博客记录成长，目前又刚好遇上毕业，但从头来记录与总结大学生活，或许有些不易与不大的效果；故选在三年中做得比较好的关于创业比赛的事情做一小小的总结，以此结束大学生活。刚好之前在互联网+比赛群内校方要求我们写过类似的东西，虽写时未费多少心力，但引用来寥寥的进行一下总结，倒也是够了，所以我并不想过多修饰。这样想想，直接就于下面附上</p>
+<h1 id="比赛">比赛</h1>
 <blockquote>
 <p>在这个大众创业，万众创新的时代下，充满着许多新的机遇与挑战，这些机遇与挑战虽然充满了不确定性，可是却吸引着一批又一批的项目和项目团队前仆后继的向前，因为他们所为的不仅仅是荣誉，而是希望能在这样的时代背景下，为社会贡献并创造出属于他们的价值，散发年轻的光和热，而在工贸，也有这么一群人，从而他们组成了充满年轻朝气且极其具有创业意识的“V”你解忧项目团队<br>
 “V”你解忧项目从初期孵化，到比赛夺奖，中间经历过的大大小小的比赛不计其数，但是可以计数的是，每次比赛，我们的项目都获得了前三的名次，而这不是巧合，正是因为我们知道，我们的项目应该走得更远，所以不论比赛是大是小，我们都应当把它当做省赛来进行准备，只有这样，我们的项目才能更加完备，更加无可挑剔，在过程中，我们的团队成员才能汲取更多的经验，而这样的一种意识，将会伴随我们的终身，当然，过程也是十分痛苦的，因为这不是一般的学生所能够完成的，在充满不确定性且完全未知的项目探索下，我们需要不断地对项目，甚至对自我进行否定，只有通过不断地改变我们原有的假设，我们的团队才能够进步，我们的项目才能够进步<br>
